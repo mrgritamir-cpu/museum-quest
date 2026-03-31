@@ -9,9 +9,8 @@
 body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-height:100vh;overflow-x:hidden}
 .screen{display:none;min-height:100vh}
 .screen.active{display:flex;flex-direction:column}
-
-#splash{background:#0f0e0d;align-items:center;justify-content:center;text-align:center;padding:32px 24px}
-.logo-ring{width:90px;height:90px;border-radius:50%;border:2px solid #c9a96e;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px}
+#splash{align-items:center;justify-content:center;text-align:center;padding:32px 24px}
+.logo-ring{width:90px;height:90px;border-radius:50%;border:2px solid #c9a96e;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;overflow:hidden;background:#fff}
 #splash h1{font-size:26px;font-weight:700;margin-bottom:8px}
 #splash>p{font-size:14px;color:#888;margin-bottom:36px;line-height:1.6}
 .era-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:360px}
@@ -24,7 +23,6 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
 .era-title.done-text{color:#4caf82}
 .era-sub{font-size:11px;color:#666}
 .all-done-box{display:none;margin-top:20px;background:#0d2016;border:1px solid #1d9e75;border-radius:16px;padding:20px 18px;text-align:center;max-width:360px;width:100%}
-
 #intro{background:#0f0e0d}
 .intro-header{padding:48px 24px 24px;background:linear-gradient(180deg,#1c1a17 0%,#0f0e0d 100%)}
 .era-badge{display:inline-block;background:#c9a96e22;border:1px solid #c9a96e55;color:#c9a96e;font-size:11px;padding:4px 12px;border-radius:20px;margin-bottom:16px}
@@ -32,9 +30,7 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
 .intro-header p{font-size:14px;color:#999;line-height:1.7}
 .story-block{margin:0 24px 24px;background:#1c1a17;border-radius:16px;padding:20px;border-left:3px solid #c9a96e}
 .story-block p{font-size:14px;color:#ccc;line-height:1.7;font-style:italic}
-.btn-primary{display:block;width:calc(100% - 48px);margin:0 24px 32px;background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:16px;border-radius:14px;border:none;cursor:pointer;transition:opacity .2s}
-.btn-primary:hover{opacity:.88}
-
+.btn-gold{display:block;width:calc(100% - 48px);margin:0 24px 32px;background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:16px;border-radius:14px;border:none;cursor:pointer}
 #quest{background:#0f0e0d}
 .quest-top{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid #1e1c18}
 .back-btn{background:none;border:none;color:#888;font-size:22px;cursor:pointer}
@@ -42,7 +38,6 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
 .dot{width:8px;height:8px;border-radius:50%;background:#2e2b26;transition:background .3s}
 .dot.done{background:#c9a96e}
 .dot.active{background:#c9a96e;box-shadow:0 0 0 3px #c9a96e33}
-
 .quest-body{padding:24px 24px 0}
 .step-label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .quest-body h3{font-size:19px;font-weight:700;margin-bottom:16px;line-height:1.4}
@@ -52,38 +47,38 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
 .hint-box{background:#17201a;border-radius:14px;padding:16px;margin-bottom:20px;border:1px solid #1d3025}
 .hint-label{font-size:11px;color:#4caf82;font-weight:600;margin-bottom:6px}
 .hint-text{font-size:13px;color:#7db896;line-height:1.6}
-
-.code-zone{padding:0 24px 16px}
+.code-section{padding:0 24px 16px}
 .code-label{font-size:13px;color:#888;text-align:center;margin-bottom:14px}
 .code-label strong{color:#c9a96e}
-.code-inputs{display:flex;gap:12px;justify-content:center;margin-bottom:14px}
-.code-digit{width:64px;height:72px;background:#1c1a17;border:1.5px solid #2e2b26;border-radius:14px;font-size:32px;font-weight:700;color:#f0ede8;text-align:center;outline:none;-moz-appearance:textfield;transition:border-color .2s}
-.code-digit::-webkit-outer-spin-button,.code-digit::-webkit-inner-spin-button{-webkit-appearance:none}
-.code-digit:focus{border-color:#c9a96e}
-.btn-confirm{width:100%;background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:15px;border-radius:14px;border:none;cursor:pointer;opacity:.4;transition:opacity .2s;pointer-events:none}
-.btn-confirm.ready{opacity:1;pointer-events:auto}
-
+.digits{display:flex;gap:12px;justify-content:center;margin-bottom:14px}
+.digit{width:64px;height:72px;background:#1c1a17;border:1.5px solid #2e2b26;border-radius:14px;font-size:32px;font-weight:700;color:#f0ede8;text-align:center;outline:none;transition:border-color .2s;-moz-appearance:textfield}
+.digit::-webkit-outer-spin-button,.digit::-webkit-inner-spin-button{-webkit-appearance:none}
+.digit:focus{border-color:#c9a96e}
+.btn-confirm{width:100%;background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:15px;border-radius:14px;border:none;cursor:pointer;opacity:.35;pointer-events:none;transition:opacity .2s}
+.btn-confirm.active{opacity:1;pointer-events:auto}
+.test-row{display:flex;gap:10px;margin:0 24px 24px}
+.btn-test{flex:1;font-size:13px;font-weight:600;padding:12px;border-radius:12px;cursor:pointer;border:none}
 .overlay{position:fixed;inset:0;background:#0f0e0dcc;display:flex;align-items:center;justify-content:center;z-index:100;padding:24px}
-
-@keyframes fbpop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
-@keyframes fbup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.fbpop{animation:fbpop .35s cubic-bezier(.34,1.56,.64,1) forwards}
-.fbup1{animation:fbup .4s .1s ease both}
-.fbup2{animation:fbup .4s .2s ease both}
-.fbup3{animation:fbup .4s .32s ease both}
-.fbup4{animation:fbup .4s .44s ease both}
-
-#finish{background:#0f0e0d;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
-.finish-badge{width:100px;height:100px;border-radius:50%;border:3px solid #c9a96e;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:44px}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.anim-pop{animation:pop .35s cubic-bezier(.34,1.56,.64,1) forwards}
+.anim-up1{animation:up .4s .1s ease both}
+.anim-up2{animation:up .4s .2s ease both}
+.anim-up3{animation:up .4s .32s ease both}
+.anim-up4{animation:up .4s .44s ease both}
+#finish{align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+.finish-icon{width:100px;height:100px;border-radius:50%;border:3px solid #c9a96e;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:44px}
 #finish h2{font-size:24px;font-weight:700;margin-bottom:16px}
 #finish>p{font-size:14px;color:#888;margin-bottom:24px;line-height:1.7;max-width:280px}
-.finish-all-done{display:none;flex-direction:column;align-items:center;background:#0d2016;border:1px solid #1d9e75;border-radius:16px;padding:20px 18px;text-align:center;max-width:300px;margin-bottom:24px;width:100%}
+.all-done-finish{display:none;flex-direction:column;align-items:center;background:#0d2016;border:1px solid #1d9e75;border-radius:16px;padding:20px 18px;text-align:center;max-width:300px;margin-bottom:24px;width:100%}
 </style>
 </head>
 <body>
 
 <div id="splash" class="screen active">
-  <div class="logo-ring"><img src="https://www.asu.ru/files/images/logo_asu.png" style="width:60px;height:60px;object-fit:contain"></div>
+  <div class="logo-ring">
+    <img src="https://www.asu.ru/files/images/logo_asu.png" style="width:68px;height:68px;object-fit:contain">
+  </div>
   <h1>Детектив времени</h1>
   <p>Музей археологии АлтГУ<br>Раскрой тайны древнего Алтая</p>
   <div class="era-grid">
@@ -125,7 +120,7 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
     <div class="clue-label" style="margin-bottom:8px">Твоя миссия</div>
     <p id="intro-mission"></p>
   </div>
-  <button class="btn-primary" onclick="startQuest()">Начать расследование →</button>
+  <button class="btn-gold" onclick="startQuest()">Начать расследование →</button>
 </div>
 
 <div id="quest" class="screen">
@@ -150,117 +145,138 @@ body{font-family:system-ui,sans-serif;background:#0f0e0d;color:#f0ede8;min-heigh
       <div class="hint-text" id="q-hint"></div>
     </div>
   </div>
-  <div class="code-zone">
+  <div class="code-section">
     <div class="code-label">Найди экспонат и введи <strong>код с таблички</strong></div>
-    <div class="code-inputs">
-      <input class="code-digit" id="ci0" type="tel" maxlength="1" placeholder="–">
-      <input class="code-digit" id="ci1" type="tel" maxlength="1" placeholder="–">
-      <input class="code-digit" id="ci2" type="tel" maxlength="1" placeholder="–">
+    <div class="digits">
+      <input class="digit" id="c0" type="tel" maxlength="1" placeholder="–">
+      <input class="digit" id="c1" type="tel" maxlength="1" placeholder="–">
+      <input class="digit" id="c2" type="tel" maxlength="1" placeholder="–">
     </div>
-    <button class="btn-confirm" id="confirm-btn" onclick="checkCode()">Подтвердить</button>
+    <button class="btn-confirm" id="btn-confirm" onclick="checkCode()">Подтвердить</button>
   </div>
-  <div style="display:flex;gap:10px;margin:0 24px 24px">
-    <button onclick="handleCorrect()" style="flex:1;background:#0d2016;border:1px solid #1d9e75;color:#4caf82;font-size:13px;font-weight:600;padding:12px;border-radius:12px;cursor:pointer">✓ Верно (тест)</button>
-    <button onclick="handleWrong()" style="flex:1;background:#1e1414;border:1px solid #3d1f1f;color:#e57373;font-size:13px;font-weight:600;padding:12px;border-radius:12px;cursor:pointer">✗ Неверно (тест)</button>
+  <div class="test-row">
+    <button class="btn-test" style="background:#0d2016;border:1px solid #1d9e75;color:#4caf82" onclick="handleCorrect()">✓ Верно (тест)</button>
+    <button class="btn-test" style="background:#1e1414;border:1px solid #3d1f1f;color:#e57373" onclick="handleWrong()">✗ Неверно (тест)</button>
   </div>
 </div>
 
 <div id="finish" class="screen">
-  <div class="finish-badge" id="finish-icon">🏆</div>
+  <div class="finish-icon" id="finish-icon">🏆</div>
   <h2 id="finish-title"></h2>
   <p id="finish-text"></p>
-  <div class="finish-all-done" id="finish-all-done">
+  <div class="all-done-finish" id="all-done-finish">
     <div style="font-size:28px;margin-bottom:10px">🎉</div>
     <div style="font-size:15px;font-weight:700;color:#4caf82;margin-bottom:8px">Все эпохи пройдены!</div>
     <div style="font-size:13px;color:#7db896;line-height:1.6">Покажи этот экран сотруднику музея — и получишь крутой стикер!</div>
   </div>
-  <button class="btn-primary" style="width:calc(100% - 48px)" onclick="goHome()">Выбрать другую эпоху</button>
+  <button class="btn-gold" style="width:calc(100% - 48px)" onclick="goHome()">Выбрать другую эпоху</button>
 </div>
 
 <script>
 const ERAS = {
-  paleolith: {
-    title:'Дело о первых охотниках',
-    badge:'Палеолит · 800 000 — 10 000 до н.э.',
-    desc:'Ранним утром куратор музея обнаружила, что описания трёх важнейших экспонатов палеолита исчезли из базы данных. Только сами предметы остались стоять на полках — немые свидетели далёкого прошлого.',
-    mission:'Твоя задача — найти каждый экспонат в зале, изучить его и восстановить утраченные данные. Три артефакта, три улики. Готов?',
+  paleolith:{
+    title:'Дело о первых охотниках',badge:'Палеолит · 800 000 — 10 000 до н.э.',
+    desc:'Ранним утром куратор музея обнаружила, что описания трёх важнейших экспонатов палеолита исчезли из базы данных. Только сами предметы остались стоять на полках.',
+    mission:'Твоя задача — найти каждый экспонат в зале и ввести код с таблички. Три артефакта, три улики. Готов?',
     questions:[
-      {title:'Орудие первого охотника', code:'114', clue:'Это орудие из тёмного кремня. Один край тщательно обработан — острые сколы шли слева направо. Длина около 12 см. Найдено на стоянке Денисова пещера. Им разделывали добычу и обрабатывали шкуры.', hint:'Ищи в витрине с каменными орудиями. Обрати внимание на форму — один конец заострён, другой широкий, удобный для руки.', fact:'Этому кремниевому орудию около 40 000 лет. Следы износа на рабочем крае говорят о том, что им разделывали крупную дичь — мамонтов и шерстистых носорогов.'},
-      {title:'Кость с тайным знаком', code:'122', clue:'Фрагмент трубчатой кости крупного животного. На поверхности — ряды насечек, нанесённых острым камнем. Возможно, это древнейший календарь или счётная запись. Возраст — около 40 000 лет.', hint:'Ищи среди небольших костяных предметов. Насечки расположены аккуратными рядами — их легко заметить вблизи.', fact:'Насечки нанесены с одинаковым интервалом — 28 штук. Многие учёные считают, что это лунный календарь: древний человек отслеживал фазы луны для охоты.'},
-      {title:'Наконечник копья', code:'133', clue:'Листовидный наконечник из светло-серого кварцита. Симметричная форма, оба края ретушированы. Длина 8 см. Такие наконечники насаживали на деревянное древко с помощью жильных нитей.', hint:'Ищи в нижней части витрины рядом с другими наконечниками. Обрати внимание — он заметно светлее соседних.', fact:'Чтобы сделать такой наконечник, мастер наносил сотни точных ударов. Одно неверное движение — и камень раскалывался. Это требовало лет обучения.'}
+      {title:'Орудие первого охотника',code:'114',
+       clue:'Это орудие из тёмного кремня. Один край тщательно обработан. Длина около 12 см. Найдено на стоянке Денисова пещера. Им разделывали добычу и обрабатывали шкуры.',
+       hint:'Ищи в витрине с каменными орудиями. Один конец заострён, другой широкий — удобный для руки.',
+       fact:'Этому кремниевому орудию около 40 000 лет. Следы износа говорят о том, что им разделывали крупную дичь — мамонтов и шерстистых носорогов.'},
+      {title:'Кость с тайным знаком',code:'122',
+       clue:'Фрагмент трубчатой кости крупного животного. На поверхности — ряды насечек, нанесённых острым камнем. Возможно, это древнейший календарь. Возраст — около 40 000 лет.',
+       hint:'Ищи среди небольших костяных предметов. Насечки расположены аккуратными рядами.',
+       fact:'Насечки нанесены с одинаковым интервалом — 28 штук. Многие учёные считают, что это лунный календарь.'},
+      {title:'Наконечник копья',code:'133',
+       clue:'Листовидный наконечник из светло-серого кварцита. Симметричная форма, оба края ретушированы. Длина 8 см.',
+       hint:'В нижней части витрины. Он заметно светлее соседних наконечников.',
+       fact:'Чтобы сделать такой наконечник, мастер наносил сотни точных ударов. Одно неверное движение — и камень раскалывался.'}
     ]
   },
-  mesolith: {
-    title:'Дело о лесных следопытах',
-    badge:'Мезолит · 10 000 — 6 000 до н.э.',
-    desc:'После последнего ледникового периода климат потеплел, леса пришли на смену тундре. Люди стали охотиться по-новому — небольшими группами, с луком и стрелами.',
-    mission:'В зале спрятаны три артефакта мезолита. Найди каждый по описанию и введи код с таблички.',
+  mesolith:{
+    title:'Дело о лесных следопытах',badge:'Мезолит · 10 000 — 6 000 до н.э.',
+    desc:'После ледникового периода климат потеплел. Люди стали охотиться по-новому — небольшими группами, с луком и стрелами.',
+    mission:'В зале три артефакта мезолита. Найди каждый по описанию и введи код с таблички.',
     questions:[
-      {title:'Микролит — вкладыш для стрелы', code:'211', clue:'Крошечный кремниевый вкладыш — всего 2–3 см. Геометрическая форма: трапеция с одним усечённым краем. Такие вкладыши вставляли в пазы костяных наконечников.', hint:'Ищи в витрине с мелкими предметами — микролиты обычно выложены на тёмной подложке.', fact:'Микролиты — настоящая революция каменного века. Один охотник мог нести десятки таких вкладышей и быстро заменять сломанный наконечник прямо во время охоты.'},
-      {title:'Скребок для обработки кожи', code:'222', clue:'Округлый скребок из серого кремня. Рабочий край — выпуклый, тщательно заполированный от использования. Таким инструментом выделывали шкуры убитых животных.', hint:'Среди орудий труда. Характерная черта — блеск на рабочем крае от многолетнего использования.', fact:'Полировка на рабочем крае — это «паспорт» орудия. По характеру износа археологи определяют, какой материал обрабатывали: кожу, дерево или кость.'},
-      {title:'Подвеска из клыка', code:'233', clue:'Украшение из клыка молодого оленя. В верхней части — просверленное отверстие для нити. Поверхность отполирована. Подвески такого типа были символом удачной охоты.', hint:'В витрине с украшениями. Небольшой предмет кремово-жёлтого цвета с дырочкой сверху.', fact:'Просверлить отверстие в кости без металла — задача на несколько часов. Использовали кремниевое сверло и песок как абразив.'}
+      {title:'Микролит — вкладыш для стрелы',code:'211',
+       clue:'Крошечный кремниевый вкладыш — всего 2–3 см. Геометрическая форма: трапеция. Такие вкладыши вставляли в пазы костяных наконечников.',
+       hint:'В витрине с мелкими предметами — микролиты выложены на тёмной подложке.',
+       fact:'Микролиты — революция каменного века. Охотник мог нести десятки вкладышей и быстро заменять сломанный наконечник прямо во время охоты.'},
+      {title:'Скребок для обработки кожи',code:'222',
+       clue:'Округлый скребок из серого кремня. Рабочий край — выпуклый, заполированный от использования.',
+       hint:'Среди орудий труда. Характерная черта — блеск на рабочем крае.',
+       fact:'По характеру износа археологи определяют, какой материал обрабатывали: кожу, дерево или кость.'},
+      {title:'Подвеска из клыка',code:'233',
+       clue:'Украшение из клыка молодого оленя. В верхней части — просверленное отверстие для нити. Поверхность отполирована.',
+       hint:'В витрине с украшениями. Небольшой предмет кремово-жёлтого цвета с дырочкой сверху.',
+       fact:'Просверлить отверстие в кости без металла — задача на несколько часов. Использовали кремниевое сверло и песок.'}
     ]
   },
-  neolith: {
-    title:'Дело о первых земледельцах',
-    badge:'Неолит · 6 000 — 3 000 до н.э.',
-    desc:'Люди научились выращивать злаки и разводить скот. Появились первые постоянные поселения. На Алтае этот переворот оставил удивительные следы.',
-    mission:'Три экспоната неолита ждут тебя в зале. Каждый расскажет о революции, которая изменила человечество навсегда.',
+  neolith:{
+    title:'Дело о первых земледельцах',badge:'Неолит · 6 000 — 3 000 до н.э.',
+    desc:'Люди научились выращивать злаки и разводить скот. На Алтае этот переворот оставил удивительные следы.',
+    mission:'Три экспоната неолита ждут тебя в зале. Найди каждый и введи код с таблички.',
     questions:[
-      {title:'Глиняный сосуд с орнаментом', code:'311', clue:'Фрагмент керамики ручной лепки. По венчику идёт орнамент в виде вдавленных ямок и зигзагов — характерный для алтайского неолита. Толщина стенки — около 8 мм.', hint:'В витрине с керамикой. Ищи фрагмент с отчётливым узором по краю — ямки и зигзаги хорошо видны.', fact:'Глиняная посуда изменила питание человека: еду впервые можно было варить. Это сделало доступными многие продукты, которые раньше нельзя было есть.'},
-      {title:'Зернотёрка', code:'322', clue:'Плоский камень из песчаника с вогнутой рабочей поверхностью. Использовалась для растирания зерна в муку. На рабочей поверхности — поперечные бороздки от многократного использования.', hint:'Один из крупных предметов в зале. Плоский и тяжёлый, лежит горизонтально. Вогнутость в центре хорошо заметна.', fact:'Час работы с зернотёркой давал муки на одну лепёшку. По костям древних женщин видно, что они проводили за ней по несколько часов в день.'},
-      {title:'Каменное кольцо-браслет', code:'333', clue:'Браслет из цельного куска нефрита. Диаметр около 7 см, ширина 2 см. Поверхность отполирована до блеска. Такие украшения были признаком высокого статуса.', hint:'В витрине с украшениями. Зелёный полированный предмет круглой формы — нефрит сразу выделяется.', fact:'Нефрит — один из самых твёрдых камней. Вырезать из него браслет без металлических инструментов занимало недели.'}
+      {title:'Глиняный сосуд с орнаментом',code:'311',
+       clue:'Фрагмент керамики ручной лепки. По венчику — орнамент из вдавленных ямок и зигзагов. Толщина стенки около 8 мм.',
+       hint:'В витрине с керамикой. Ищи фрагмент с узором по краю.',
+       fact:'Глиняная посуда изменила питание человека: еду впервые можно было варить.'},
+      {title:'Зернотёрка',code:'322',
+       clue:'Плоский камень из песчаника с вогнутой рабочей поверхностью. Длина около 30 см. Видны поперечные бороздки от многократного использования.',
+       hint:'Один из крупных предметов. Плоский, лежит горизонтально. Вогнутость в центре хорошо заметна.',
+       fact:'Час работы с зернотёркой давал муки на одну лепёшку. Женщины проводили за ней по несколько часов в день.'},
+      {title:'Каменное кольцо-браслет',code:'333',
+       clue:'Браслет из цельного куска нефрита. Диаметр около 7 см. Поверхность отполирована до блеска.',
+       hint:'В витрине с украшениями. Зелёный полированный предмет круглой формы.',
+       fact:'Вырезать браслет из нефрита без металлических инструментов занимало недели. Мог позволить себе только вождь.'}
     ]
   },
-  medieval: {
-    title:'Дело о тюркских воинах',
-    badge:'Средневековье · VI — XIV вв.',
-    desc:'Алтай в средние века — перекрёсток великих кочевых империй. Тюрки, кыпчаки, монголы — каждый народ оставил здесь свои следы.',
-    mission:'Расследуй три дела о средневековых артефактах. Кому они принадлежали? Какую историю рассказывают?',
+  medieval:{
+    title:'Дело о тюркских воинах',badge:'Средневековье · VI — XIV вв.',
+    desc:'Алтай в средние века — перекрёсток кочевых империй. Тюрки, кыпчаки, монголы оставили здесь свои следы.',
+    mission:'Расследуй три дела о средневековых артефактах. Найди каждый и введи код с таблички.',
     questions:[
-      {title:'Наконечник стрелы тюркского лучника', code:'411', clue:'Железный бронебойный наконечник стрелы. Четырёхгранное сечение, втулка для крепления к древку. Длина 7 см. Датируется VII–VIII веком.', hint:'В витрине с оружием. Небольшой металлический предмет тёмно-коричневого цвета. Четыре чётких грани — характерная форма.', fact:'Тюркские лучники выпускали до 10 стрел в минуту на полном скаку. Эта тактика изменила облик войны от Китая до Европы.'},
-      {title:'Поясная пряжка', code:'422', clue:'Бронзовая литая пряжка от воинского пояса. Орнамент в зверином стиле — схематичный хищник с повёрнутой головой. Размер 4×3 см.', hint:'Среди предметов личного снаряжения. Небольшая бронзовая вещица с орнаментом в виде животного.', fact:'По количеству бляшек на поясе определяли ранг воина. Каган носил пояс с золотыми украшениями, рядовой воин — с бронзовыми.'},
-      {title:'Серебряная серьга', code:'433', clue:'Серьга из серебра в форме знака вопроса — классическая тюркская форма. Конец украшен шариком зерни. Найдена в женском захоронении кургана на Чуйском тракте.', hint:'В витрине с ювелирными украшениями. Маленький блестящий предмет — серебро заметно выделяется.', fact:'Зернь — техника украшения мелкими шариками металла — требовала ювелирной точности. Мастера Алтая владели ею на уровне лучших ремесленников своего времени.'}
+      {title:'Наконечник стрелы тюркского лучника',code:'411',
+       clue:'Железный бронебойный наконечник. Четырёхгранное сечение, втулка для крепления. Длина 7 см. Датируется VII–VIII веком.',
+       hint:'В витрине с оружием. Тёмно-коричневый от патины, четыре чётких грани.',
+       fact:'Тюркские лучники выпускали до 10 стрел в минуту на полном скаку. Эта тактика изменила облик войны от Китая до Европы.'},
+      {title:'Поясная пряжка',code:'422',
+       clue:'Бронзовая литая пряжка от воинского пояса. Орнамент в зверином стиле — хищник с повёрнутой головой. Размер 4×3 см.',
+       hint:'Среди предметов снаряжения. Небольшая бронзовая вещица с орнаментом в виде животного.',
+       fact:'По количеству бляшек на поясе определяли ранг воина. Каган носил золотые украшения, рядовой — бронзовые.'},
+      {title:'Серебряная серьга',code:'433',
+       clue:'Серьга из серебра в форме знака вопроса — классическая тюркская форма. Конец украшен шариком зерни. Найдена в женском захоронении кургана.',
+       hint:'В витрине с украшениями. Серебро выделяется среди других металлов.',
+       fact:'Зернь — техника из мелких шариков металла — требовала ювелирной точности. Мастера Алтая владели ею мастерски.'}
     ]
   }
 };
 
-let currentEra=null, currentStep=0, correctAnswers=0;
-let completedEras={};
+let era=null,step=0,correct=0,done={};
 
-function show(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
 
-function goHome(){
-  currentEra=null; currentStep=0; correctAnswers=0;
-  renderSplash(); show('splash');
-}
+function goHome(){era=null;step=0;correct=0;renderSplash();show('splash');}
 
 function renderSplash(){
-  Object.keys(ERAS).forEach(era=>{
-    const card=document.getElementById('era-'+era);
-    const title=document.getElementById('et-'+era);
-    if(completedEras[era]){
-      card.classList.add('done');
-      title.classList.add('done-text');
+  Object.keys(ERAS).forEach(e=>{
+    const card=document.getElementById('era-'+e);
+    const title=document.getElementById('et-'+e);
+    if(done[e]){
+      card.classList.add('done');title.classList.add('done-text');
       if(!card.querySelector('.era-done-badge')){
-        const b=document.createElement('div');
-        b.className='era-done-badge';
+        const b=document.createElement('div');b.className='era-done-badge';
         b.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
         card.appendChild(b);
       }
     }
   });
-  const allDone=Object.keys(ERAS).every(e=>completedEras[e]);
-  document.getElementById('all-done-box').style.display=allDone?'block':'none';
+  document.getElementById('all-done-box').style.display=Object.keys(ERAS).every(e=>done[e])?'block':'none';
 }
 
-function startEra(era){
-  currentEra=era; currentStep=0; correctAnswers=0;
-  const d=ERAS[era];
+function startEra(e){
+  era=e;step=0;correct=0;
+  const d=ERAS[e];
   document.getElementById('intro-badge').textContent=d.badge;
   document.getElementById('intro-title').textContent=d.title;
   document.getElementById('intro-desc').textContent=d.desc;
@@ -268,125 +284,107 @@ function startEra(era){
   show('intro');
 }
 
-function startQuest(){ renderStep(); show('quest'); }
+function startQuest(){renderStep();show('quest');}
 
 function renderStep(){
-  const q=ERAS[currentEra].questions[currentStep];
-  document.getElementById('step-label').textContent=`Улика ${currentStep+1} из 3`;
+  const q=ERAS[era].questions[step];
+  document.getElementById('step-label').textContent=`Улика ${step+1} из 3`;
   document.getElementById('q-title').textContent=q.title;
   document.getElementById('q-clue').textContent=q.clue;
   document.getElementById('q-hint').textContent=q.hint;
-  for(let i=0;i<3;i++){
-    const d=document.getElementById('d'+i);
-    d.className='dot'+(i<currentStep?' done':i===currentStep?' active':'');
-  }
-  clearCode();
-  setTimeout(()=>document.getElementById('ci0').focus(),200);
+  for(let i=0;i<3;i++){const d=document.getElementById('d'+i);d.className='dot'+(i<step?' done':i===step?' active':'');}
+  clearDigits();
+  setTimeout(()=>document.getElementById('c0').focus(),200);
 }
 
-function clearCode(){
-  ['ci0','ci1','ci2'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el) el.value='';
-  });
-  updateBtn();
+function clearDigits(){
+  ['c0','c1','c2'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  syncBtn();
 }
 
-function updateBtn(){
-  const full=['ci0','ci1','ci2'].every(id=>{
-    const el=document.getElementById(id);
-    return el&&el.value.trim().length===1;
-  });
-  const btn=document.getElementById('confirm-btn');
-  if(btn) btn.classList.toggle('ready',full);
+function syncBtn(){
+  const full=['c0','c1','c2'].every(id=>document.getElementById(id)?.value.length===1);
+  const btn=document.getElementById('btn-confirm');
+  if(btn){btn.classList.toggle('active',full);}
 }
 
-function initCodeInputs(){
-  ['ci0','ci1','ci2'].forEach((id,i)=>{
+document.addEventListener('DOMContentLoaded',()=>{
+  ['c0','c1','c2'].forEach((id,i)=>{
     const el=document.getElementById(id);
-    if(!el) return;
     el.addEventListener('input',()=>{
       el.value=el.value.replace(/\D/g,'').slice(-1);
-      if(el.value&&i<2) document.getElementById('ci'+(i+1)).focus();
-      updateBtn();
+      if(el.value&&i<2)document.getElementById('c'+(i+1)).focus();
+      syncBtn();
     });
     el.addEventListener('keydown',e=>{
-      if(e.key==='Backspace'&&!el.value&&i>0) document.getElementById('ci'+(i-1)).focus();
+      if(e.key==='Backspace'&&!el.value&&i>0)document.getElementById('c'+(i-1)).focus();
     });
   });
-}
+});
 
 function checkCode(){
-  const entered=['ci0','ci1','ci2'].map(id=>document.getElementById(id).value).join('');
-  const expected=ERAS[currentEra].questions[currentStep].code;
-  entered===expected?handleCorrect():handleWrong();
+  const entered=['c0','c1','c2'].map(id=>document.getElementById(id).value).join('');
+  entered===ERAS[era].questions[step].code?handleCorrect():handleWrong();
 }
 
 function handleCorrect(){
-  correctAnswers++;
-  const q=ERAS[currentEra].questions[currentStep];
-  const isLast=currentStep>=2;
-  const overlay=document.createElement('div');
-  overlay.className='overlay';
-  overlay.innerHTML=`
-    <div style="background:#1c1a17;border-radius:20px;overflow:hidden;max-width:320px;width:100%;border:1px solid #2e2b26">
-      <div style="padding:28px 24px 24px;text-align:center">
-        <div class="fbpop" style="width:72px;height:72px;border-radius:50%;background:#0d2016;border:2px solid #1d9e75;display:flex;align-items:center;justify-content:center;margin:0 auto 18px">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16L13 23L26 9" stroke="#1d9e75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="fbup1" style="display:inline-block;background:#0d2016;border:1px solid #1d3a25;color:#4caf82;font-size:11px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase">Верно, детектив!</div>
-        <div class="fbup2" style="font-size:17px;font-weight:700;color:#f0ede8;margin-bottom:14px;line-height:1.3">${q.title} найден</div>
-        <div class="fbup3" style="background:#141a12;border-radius:12px;padding:14px;margin-bottom:18px;border:1px solid #1d3025;text-align:left">
-          <div style="font-size:11px;color:#4caf82;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Факт об экспонате</div>
-          <div style="font-size:13px;color:#9db89e;line-height:1.6">${q.fact}</div>
-        </div>
-        <div class="fbup3" style="margin-bottom:20px">
-          <div style="font-size:22px;font-weight:700;color:#f0ede8">${correctAnswers}/3</div>
-          <div style="font-size:11px;color:#666;margin-top:2px">улики</div>
-        </div>
-        <div class="fbup4">
-          <button style="background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:15px;border-radius:14px;border:none;cursor:pointer;width:100%" onclick="nextStep()">
-            ${isLast?'Завершить расследование →':'Следующая улика →'}
-          </button>
-        </div>
+  correct++;
+  const q=ERAS[era].questions[step];
+  const ov=document.createElement('div');ov.className='overlay';
+  ov.innerHTML=`<div style="background:#1c1a17;border-radius:20px;overflow:hidden;max-width:320px;width:100%;border:1px solid #2e2b26">
+    <div style="padding:28px 24px 24px;text-align:center">
+      <div class="anim-pop" style="width:72px;height:72px;border-radius:50%;background:#0d2016;border:2px solid #1d9e75;display:flex;align-items:center;justify-content:center;margin:0 auto 18px">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16L13 23L26 9" stroke="#1d9e75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-    </div>`;
-  document.body.appendChild(overlay);
+      <div class="anim-up1" style="display:inline-block;background:#0d2016;border:1px solid #1d3a25;color:#4caf82;font-size:11px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">Верно, детектив!</div>
+      <div class="anim-up2" style="font-size:17px;font-weight:700;color:#f0ede8;margin-bottom:14px;line-height:1.3">${q.title} найден</div>
+      <div class="anim-up3" style="background:#141a12;border-radius:12px;padding:14px;margin-bottom:18px;border:1px solid #1d3025;text-align:left">
+        <div style="font-size:11px;color:#4caf82;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Факт об экспонате</div>
+        <div style="font-size:13px;color:#9db89e;line-height:1.6">${q.fact}</div>
+      </div>
+      <div class="anim-up3" style="margin-bottom:20px">
+        <div style="font-size:22px;font-weight:700;color:#f0ede8">${correct}/3</div>
+        <div style="font-size:11px;color:#666;margin-top:2px">улики</div>
+      </div>
+      <div class="anim-up4">
+        <button style="background:#c9a96e;color:#0f0e0d;font-size:15px;font-weight:700;padding:15px;border-radius:14px;border:none;cursor:pointer;width:100%" onclick="nextStep()">
+          ${step>=2?'Завершить расследование →':'Следующая улика →'}
+        </button>
+      </div>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
 }
 
 function handleWrong(){
-  const overlay=document.createElement('div');
-  overlay.className='overlay';
-  overlay.innerHTML=`
-    <div style="background:#1e1414;border:1px solid #3d1f1f;border-radius:20px;padding:28px 24px;text-align:center;max-width:300px;width:100%">
-      <div style="font-size:44px;margin-bottom:16px">🔎</div>
-      <h4 style="font-size:17px;font-weight:700;color:#e57373;margin-bottom:8px">Не тот след, детектив</h4>
-      <p style="font-size:13px;color:#888;margin-bottom:20px;line-height:1.5">Неверный код. Перечитай описание и поищи нужный экспонат в зале.</p>
-      <button style="background:#2e2b26;color:#f0ede8;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;width:100%" onclick="this.closest('.overlay').remove();clearCode()">Попробовать ещё раз</button>
-    </div>`;
-  document.body.appendChild(overlay);
+  const ov=document.createElement('div');ov.className='overlay';
+  ov.innerHTML=`<div style="background:#1e1414;border:1px solid #3d1f1f;border-radius:20px;padding:28px 24px;text-align:center;max-width:300px;width:100%">
+    <div style="font-size:44px;margin-bottom:16px">🔎</div>
+    <h4 style="font-size:17px;font-weight:700;color:#e57373;margin-bottom:8px">Не тот код, детектив</h4>
+    <p style="font-size:13px;color:#888;margin-bottom:20px;line-height:1.5">Неверный код. Перечитай описание и найди нужный экспонат.</p>
+    <button style="background:#2e2b26;color:#f0ede8;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;width:100%" onclick="this.closest('.overlay').remove();clearDigits()">Попробовать ещё раз</button>
+  </div>`;
+  document.body.appendChild(ov);
 }
 
 function nextStep(){
   document.querySelector('.overlay')?.remove();
-  currentStep++;
-  if(currentStep>=3) showFinish();
-  else{ renderStep(); show('quest'); }
+  step++;
+  if(step>=3)showFinish();
+  else{renderStep();show('quest');}
 }
 
 function showFinish(){
-  if(correctAnswers===3) completedEras[currentEra]=true;
-  const allDone=Object.keys(ERAS).every(e=>completedEras[e]);
-  document.getElementById('finish-icon').textContent=correctAnswers===3?'🏆':'🔍';
-  document.getElementById('finish-title').textContent=correctAnswers===3?'Дело раскрыто!':'Расследование завершено';
-  document.getElementById('finish-text').textContent=correctAnswers===3
+  if(correct===3)done[era]=true;
+  const allDone=Object.keys(ERAS).every(e=>done[e]);
+  document.getElementById('finish-icon').textContent=correct===3?'🏆':'🔍';
+  document.getElementById('finish-title').textContent=correct===3?'Дело раскрыто!':'Расследование завершено';
+  document.getElementById('finish-text').textContent=correct===3
     ?(allDone?'Ты раскрыл тайны всех эпох — настоящий детектив времени!':'Все три артефакта найдены. Исследуй остальные эпохи!')
-    :`Ты нашёл ${correctAnswers} из 3 артефактов. Попробуй ещё раз или выбери другую эпоху.`;
-  document.getElementById('finish-all-done').style.display=allDone?'flex':'none';
+    :`Ты нашёл ${correct} из 3 артефактов. Попробуй ещё раз или выбери другую эпоху.`;
+  document.getElementById('all-done-finish').style.display=allDone?'flex':'none';
   show('finish');
 }
-
-window.addEventListener('load',()=>{ initCodeInputs(); });
 </script>
 </body>
 </html>
